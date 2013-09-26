@@ -34,7 +34,7 @@
 
 ;; That face is intended for dimming.  While you are making sure
 ;; your library contains all the required autoload cookies you can
-;; customize the face to temporarily make the cookies more visible.
+;; just turn it off.
 
 ;; To install the keywords add this to your init file:
 ;;
