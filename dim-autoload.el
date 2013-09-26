@@ -68,7 +68,8 @@ using `global-dim-autoload-cookies-mode'."
   :lighter dim-autoload-cookies-mode-lighter
   (if dim-autoload-cookies-mode
       (font-lock-add-keywords  nil dim-autoload-add-font-lock-keywords 'end)
-    (font-lock-remove-keywords nil dim-autoload-add-font-lock-keywords)))
+    (font-lock-remove-keywords nil dim-autoload-add-font-lock-keywords))
+  (font-lock-fontify-buffer))
 
 ;;;###autoload
 (define-globalized-minor-mode global-dim-autoload-cookies-mode
