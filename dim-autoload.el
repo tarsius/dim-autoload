@@ -46,14 +46,18 @@
 
 ;;; Code:
 
+(defgroup dim-autoload nil
+  "Dim complete autoload cookie lines."
+  :group 'convenience
+  :group 'faces)
+
 (defface dim-autoload-cookie-line
   '((t (:inherit shadow)))
   "Face for autoload cookie lines.
-
 This face is only used when the appropriate font-lock keyword
 for autoload cookie lines has been installed.  To do so enable
 `global-dim-autoload-cookies-mode'."
-  :group 'faces)
+  :group 'dim-autoload)
 
 (defconst dim-autoload-font-lock-keywords-1
   '(("^;;;###[-a-z]*autoload.*$" 0 'dim-autoload-cookie-line t)))
