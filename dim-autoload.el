@@ -3,7 +3,7 @@
 ;; Copyright (C) 2013  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
-;; Version: 1.0.0
+;; Version: 1.1.0
 ;; Homepage: http://github.com/tarsius/dim-autoload
 ;; Keywords: convenience
 
@@ -40,7 +40,7 @@
 ;;
 ;;    (global-dim-autoload-cookies-mode 1)
 
-;; You might also want to dim the cookie lines even more by using
+;; You might even want to dim the cookie lines some more by using
 ;; a foreground color in `dim-autoload-cookies-line' that is very
 ;; close to the `default' background color.
 
@@ -108,9 +108,6 @@ using `global-dim-autoload-cookies-mode'."
 (defun turn-on-dim-autoload-cookies-mode-if-desired ()
   (when (derived-mode-p 'emacs-lisp-mode)
     (dim-autoload-cookies-mode 1)))
-
-;; Ps: This is a lot of boilerplate; the same could be
-;;     achieved using half a dozen lines in your init file.
 
 (provide 'dim-autoload)
 ;; Local Variables:
