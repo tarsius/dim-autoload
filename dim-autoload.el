@@ -55,7 +55,7 @@ for autoload cookie lines has been installed.  To do so enable
 `global-dim-autoload-cookies-mode'."
   :group 'faces)
 
-(defconst dim-autoload-add-font-lock-keywords
+(defconst dim-autoload-font-lock-keywords-1
   '(("^;;;###[-a-z]*autoload.*$" 0 'dim-autoload-cookie-line t)))
 
 (defvar dim-autoload-cookies-mode-lighter "")
@@ -67,8 +67,8 @@ You likely want to enable this globally
 using `global-dim-autoload-cookies-mode'."
   :lighter dim-autoload-cookies-mode-lighter
   (if dim-autoload-cookies-mode
-      (font-lock-add-keywords  nil dim-autoload-add-font-lock-keywords 'end)
-    (font-lock-remove-keywords nil dim-autoload-add-font-lock-keywords))
+      (font-lock-add-keywords  nil dim-autoload-font-lock-keywords-1 'end)
+    (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-1))
   (font-lock-fontify-buffer))
 
 ;;;###autoload
