@@ -59,8 +59,24 @@ for autoload cookie lines has been installed.  To do so enable
 `global-dim-autoload-cookies-mode'."
   :group 'dim-autoload)
 
+(defcustom dim-autoload-cookie-line-style 'dim-autoload-font-lock-keywords-1
+  "The font-lock keywords used for autoload cookie lines.
+After changing this the mode has to be turned off and then on
+again."
+  :group 'dim-autoload
+  :type '(choice (const :tag "just dim"
+                        dim-autoload-font-lock-keywords-1)
+                 (const :tag "dim and hide arguments"
+                        dim-autoload-font-lock-keywords-2)))
+
 (defconst dim-autoload-font-lock-keywords-1
   '(("^;;;###[-a-z]*autoload.*$" 0 'dim-autoload-cookie-line t)))
+
+(defconst dim-autoload-font-lock-keywords-2
+  '(("^;;;###[-a-z]*autoload\\(?: (\\(.+\\))\\)?$"
+     (0 'dim-autoload-cookie-line t)
+     (1 '(face      dim-autoload-cookie-line
+          invisible dim-autoload) t t))))
 
 (defvar dim-autoload-cookies-mode-lighter "")
 
@@ -70,9 +86,18 @@ for autoload cookie lines has been installed.  To do so enable
 You likely want to enable this globally
 using `global-dim-autoload-cookies-mode'."
   :lighter dim-autoload-cookies-mode-lighter
-  (if dim-autoload-cookies-mode
-      (font-lock-add-keywords  nil dim-autoload-font-lock-keywords-1 'end)
-    (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-1))
+  :group 'dim-autoload
+  (cond (dim-autoload-cookies-mode
+         (when (eq dim-autoload-cookie-line-style
+                   'dim-autoload-font-lock-keywords-2)
+           (add-to-invisibility-spec 'dim-autoload)
+           (add-to-list (make-local-variable 'font-lock-extra-managed-props)
+                        'invisible))
+         (font-lock-add-keywords
+          nil (symbol-value dim-autoload-cookie-line-style) 'end))
+        (t
+         (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-1)
+         (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-2)))
   (font-lock-fontify-buffer))
 
 ;;;###autoload
