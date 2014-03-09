@@ -3,7 +3,7 @@
 ;; Copyright (C) 2013  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
-;; Version: 1.1.0
+;; Version: 1.1.1
 ;; Homepage: http://github.com/tarsius/dim-autoload
 ;; Keywords: convenience
 
@@ -59,7 +59,7 @@ for autoload cookie lines has been installed.  To do so enable
 `global-dim-autoload-cookies-mode'."
   :group 'dim-autoload)
 
-(defcustom dim-autoload-cookie-line-style 'dim-autoload-font-lock-keywords-1
+(defcustom dim-autoload-cookie-line-style 'dim-autoload-font-lock-keywords-2
   "The font-lock keywords used for autoload cookie lines.
 After changing this the mode has to be turned off and then on
 again."
