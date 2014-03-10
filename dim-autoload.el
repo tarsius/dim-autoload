@@ -48,7 +48,7 @@
 
 (defgroup dim-autoload nil
   "Dim complete autoload cookie lines."
-  :group 'convenience
+  :group 'font-lock-extra-types
   :group 'faces)
 
 (defface dim-autoload-cookie-line
