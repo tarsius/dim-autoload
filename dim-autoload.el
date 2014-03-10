@@ -98,7 +98,8 @@ using `global-dim-autoload-cookies-mode'."
         (t
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-1)
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-2)))
-  (font-lock-fontify-buffer))
+  (when (called-interactively-p 'any)
+    (font-lock-fontify-buffer)))
 
 ;;;###autoload
 (define-globalized-minor-mode global-dim-autoload-cookies-mode
