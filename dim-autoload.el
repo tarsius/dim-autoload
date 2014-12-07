@@ -1,9 +1,8 @@
 ;;; dim-autoload.el --- dim complete autoload cookie lines
 
-;; Copyright (C) 2013  Jonas Bernoulli
+;; Copyright (C) 2013-2014  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
-;; Version: 1.1.1
 ;; Homepage: http://github.com/tarsius/dim-autoload
 ;; Keywords: convenience
 
