@@ -98,8 +98,8 @@ using `global-dim-autoload-cookies-mode'."
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-1)
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-2)))
   (when (called-interactively-p 'any)
-    (if (fboundp 'font-lock-ensure)
-        (font-lock-ensure)
+    (if (fboundp 'font-lock-flush)
+        (font-lock-flush)
       (with-no-warnings
         (font-lock-fontify-buffer)))))
 
