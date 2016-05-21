@@ -1,6 +1,6 @@
 ;;; dim-autoload.el --- dim complete autoload cookie lines
 
-;; Copyright (C) 2013-2015  Jonas Bernoulli
+;; Copyright (C) 2013-2016  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Homepage: http://github.com/tarsius/dim-autoload
@@ -97,9 +97,13 @@ using `global-dim-autoload-cookies-mode'."
         (t
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-1)
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-2)))
-  (when (called-interactively-p 'any)
-    (if (fboundp 'font-lock-flush)
-        (font-lock-flush)
+  (when font-lock-mode
+    (if (and (fboundp 'font-lock-flush)
+             (fboundp 'font-lock-ensure))
+        (save-restriction
+          (widen)
+          (font-lock-flush)
+          (font-lock-ensure))
       (with-no-warnings
         (font-lock-fontify-buffer)))))
 
