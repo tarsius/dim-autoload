@@ -1,4 +1,4 @@
-;;; dim-autoload.el --- dim complete autoload cookie lines
+;;; dim-autoload.el --- dim complete autoload cookie lines  -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2013-2016  Jonas Bernoulli
 
