@@ -1,4 +1,4 @@
-;;; dim-autoload.el --- dim complete autoload cookie lines  -*- lexical-binding: t -*-
+;;; dim-autoload.el --- dim or hide autoload cookie lines  -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2013-2016  Jonas Bernoulli
 
@@ -23,7 +23,7 @@
 
 ;;; Commentary:
 
-;; Dim autoload cookies.
+;; Dim or hide autoload cookie lines.
 
 ;; Unlike the built-in font-lock keyword which only changes the
 ;; appearance of the "autoload" substring of the autoload cookie
@@ -33,9 +33,9 @@
 
 ;; That face is intended for dimming.  While you are making sure
 ;; your library contains all the required autoload cookies you can
-;; just turn it off.
+;; just turn the mode off.
 
-;; To install the keywords add this to your init file:
+;; To install the dimming keywords add this to your init file:
 ;;
 ;;    (global-dim-autoload-cookies-mode 1)
 
@@ -43,12 +43,25 @@
 ;; a foreground color in `dim-autoload-cookies-line' that is very
 ;; close to the `default' background color.
 
+;; Additionally this package provides a mode which completely
+;; hides autoload cookies.
+
+;; To install the hiding keywords add this to your init file:
+;;
+;;    (global-hide-autoload-cookies-mode 1)
+;;
+;; Doing that is not recommended.  Also it does not make sense to
+;; enable both global modes at the same time, or both local modes
+;; in the same buffer.
+
 ;;; Code:
 
 (defgroup dim-autoload nil
   "Dim complete autoload cookie lines."
   :group 'font-lock-extra-types
   :group 'faces)
+
+;;; Dim Mode
 
 (defface dim-autoload-cookie-line
   '((t (:inherit shadow)))
@@ -97,6 +110,9 @@ using `global-dim-autoload-cookies-mode'."
         (t
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-1)
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-2)))
+  (dim-autoload-refontify))
+
+(defun dim-autoload-refontify ()
   (when font-lock-mode
     (if (and (fboundp 'font-lock-flush)
              (fboundp 'font-lock-ensure))
@@ -115,6 +131,38 @@ using `global-dim-autoload-cookies-mode'."
 (defun turn-on-dim-autoload-cookies-mode-if-desired ()
   (when (derived-mode-p 'emacs-lisp-mode)
     (dim-autoload-cookies-mode 1)))
+
+;;; Hide Mode
+
+(defconst hide-autoload-font-lock-keywords
+  '(("^\n;;;###[-a-z]*autoload.*" 0 '(face nil invisible dim-autoload) t)))
+
+(defvar hide-autoload-cookies-mode-lighter " HAuto")
+
+;;;###autoload
+(define-minor-mode hide-autoload-cookies-mode
+  "Toggle hidding autoload cookie lines.
+You likely want to enable this globally
+using `global-hide-autoload-cookies-mode'."
+  :lighter hide-autoload-cookies-mode-lighter
+  :group 'dim-autoload
+  (cond (hide-autoload-cookies-mode
+         (add-to-invisibility-spec 'dim-autoload)
+         (add-to-list (make-local-variable 'font-lock-extra-managed-props)
+                      'invisible)
+         (font-lock-add-keywords nil hide-autoload-font-lock-keywords 'end))
+        (t
+         (font-lock-remove-keywords nil hide-autoload-font-lock-keywords)))
+  (dim-autoload-refontify))
+
+;;;###autoload
+(define-globalized-minor-mode global-hide-autoload-cookies-mode
+  hide-autoload-cookies-mode turn-on-hide-autoload-cookies-mode-if-desired)
+
+;;;###autoload
+(defun turn-on-hide-autoload-cookies-mode-if-desired ()
+  (when (derived-mode-p 'emacs-lisp-mode)
+    (hide-autoload-cookies-mode 1)))
 
 (provide 'dim-autoload)
 ;; Local Variables:
