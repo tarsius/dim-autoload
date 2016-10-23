@@ -43,16 +43,12 @@
 ;; a foreground color in `dim-autoload-cookies-line' that is very
 ;; close to the `default' background color.
 
-;; Additionally this package provides a mode which completely
-;; hides autoload cookies.
-
-;; To install the hiding keywords add this to your init file:
-;;
-;;    (global-hide-autoload-cookies-mode 1)
-;;
-;; Doing that is not recommended.  Also it does not make sense to
-;; enable both global modes at the same time, or both local modes
-;; in the same buffer.
+;; Additionally this package provides a mode which completely hides
+;; autoload cookies.  To hide autoload cookies in the current buffer
+;; use `hide-autoload-cookies-mode'.  A globalized mode also exists,
+;; but its use is discouraged.  Also note that it doesn't make sense
+;; to enable both global modes at the same time, or to enable both
+;; local modes in the same buffer.
 
 ;;; Code:
 
@@ -71,10 +67,10 @@ for autoload cookie lines has been installed.  To do so enable
 `global-dim-autoload-cookies-mode'."
   :group 'dim-autoload)
 
-(defcustom dim-autoload-cookie-line-style 'dim-autoload-font-lock-keywords-2
+(defcustom dim-autoload-cookie-line-style 'dim-autoload-font-lock-keywords-1
   "The font-lock keywords used for autoload cookie lines.
-After changing this the mode has to be turned off and then on
-again."
+After changing the value of this option the mode has to
+be turned off and then on again."
   :group 'dim-autoload
   :type '(choice (const :tag "just dim"
                         dim-autoload-font-lock-keywords-1)
