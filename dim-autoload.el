@@ -50,6 +50,14 @@
 ;; to enable both global modes at the same time, or to enable both
 ;; local modes in the same buffer.
 
+;; Use the command `cycle-autoload-cookies-visibility' to cycle
+;; between the three possible styles in the current buffer, like
+;; so:
+;;
+;;    ,-> Show -> Dim -> Hide -.
+;;    '------------------------'
+
+
 ;;; Code:
 
 (defgroup dim-autoload nil
@@ -159,6 +167,27 @@ using `global-hide-autoload-cookies-mode'."
 (defun turn-on-hide-autoload-cookies-mode-if-desired ()
   (when (derived-mode-p 'emacs-lisp-mode)
     (hide-autoload-cookies-mode 1)))
+
+;;; Cycle Visibility
+
+(defun cycle-autoload-cookies-visibility ()
+  "Cycle between dimming, hidding, and showing autoload cookies.
+
+ ,-> Show -> Dim -> Hide -.
+ '------------------------'
+
+See `dim-autoload-cookies-mode'
+and `hide-autoload-cookies-mode'."
+  (interactive)
+  (cond (dim-autoload-cookies-mode
+         (dim-autoload-cookies-mode  -1)
+         (hide-autoload-cookies-mode  1))
+        (hide-autoload-cookies-mode
+         (dim-autoload-cookies-mode  -1)
+         (hide-autoload-cookies-mode -1))
+        (t
+         (dim-autoload-cookies-mode   1)
+         (hide-autoload-cookies-mode -1))))
 
 (provide 'dim-autoload)
 ;; Local Variables:
