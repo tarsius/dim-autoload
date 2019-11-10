@@ -1,6 +1,6 @@
 ;;; dim-autoload.el --- dim or hide autoload cookie lines  -*- lexical-binding: t -*-
 
-;; Copyright (C) 2013-2018  Jonas Bernoulli
+;; Copyright (C) 2013-2019  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Homepage: https://github.com/tarsius/dim-autoload
@@ -145,7 +145,7 @@ using `global-dim-autoload-cookies-mode'."
 
 ;;;###autoload
 (define-minor-mode hide-autoload-cookies-mode
-  "Toggle hidding autoload cookie lines.
+  "Toggle hiding autoload cookie lines.
 You likely want to enable this globally
 using `global-hide-autoload-cookies-mode'."
   :lighter hide-autoload-cookies-mode-lighter
@@ -171,7 +171,7 @@ using `global-hide-autoload-cookies-mode'."
 ;;; Cycle Visibility
 
 (defun cycle-autoload-cookies-visibility ()
-  "Cycle between dimming, hidding, and showing autoload cookies.
+  "Cycle between dimming, hiding, and showing autoload cookies.
 
  ,-> Show -> Dim -> Hide -.
  '------------------------'
