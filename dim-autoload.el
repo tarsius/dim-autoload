@@ -1,6 +1,6 @@
 ;;; dim-autoload.el --- dim or hide autoload cookie lines  -*- lexical-binding: t -*-
 
-;; Copyright (C) 2013-2019  Jonas Bernoulli
+;; Copyright (C) 2013-2020  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Homepage: https://github.com/tarsius/dim-autoload
