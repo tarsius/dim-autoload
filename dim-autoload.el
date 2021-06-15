@@ -1,6 +1,6 @@
 ;;; dim-autoload.el --- dim or hide autoload cookie lines  -*- lexical-binding: t -*-
 
-;; Copyright (C) 2013-2020  Jonas Bernoulli
+;; Copyright (C) 2013-2021  Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <jonas@bernoul.li>
 ;; Homepage: https://github.com/tarsius/dim-autoload
@@ -91,8 +91,9 @@ be turned off and then on again."
 (defconst dim-autoload-font-lock-keywords-2
   '(("^;;;###[-a-z]*autoload\\(?: (\\(.+\\))\\)?$"
      (0 'dim-autoload-cookie-line t)
-     (1 '(face      dim-autoload-cookie-line
-          invisible dim-autoload) t t))))
+     (1 '( face      dim-autoload-cookie-line
+           invisible dim-autoload)
+        t t))))
 
 (defvar dim-autoload-cookies-mode-lighter "")
 
