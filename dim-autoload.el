@@ -6,6 +6,8 @@
 ;; Homepage: https://github.com/tarsius/dim-autoload
 ;; Keywords: convenience
 
+;; Package-Requires: ((emacs "25.1") (compat "28.1.1.0"))
+
 ;; This file is not part of GNU Emacs.
 
 ;; This file is free software; you can redistribute it and/or modify
@@ -59,6 +61,8 @@
 
 
 ;;; Code:
+
+(require 'compat)
 
 (defgroup dim-autoload nil
   "Dim complete autoload cookie lines."
