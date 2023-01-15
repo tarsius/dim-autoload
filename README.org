@@ -35,3 +35,8 @@ so:
   ,-> Show -> Dim -> Hide -.
   '------------------------'
 #+end_src
+
+#+html: <br><br>
+#+html: <a href="https://github.com/tarsius/dim-autoload/actions/workflows/compile.yml"><img alt="Compile" src="https://github.com/tarsius/dim-autoload/actions/workflows/compile.yml/badge.svg"/></a>
+#+html: <a href="https://stable.melpa.org/#/dim-autoload"><img alt="MELPA Stable" src="https://stable.melpa.org/packages/dim-autoload-badge.svg"/></a>
+#+html: <a href="https://melpa.org/#/dim-autoload"><img alt="MELPA" src="https://melpa.org/packages/dim-autoload-badge.svg"/></a>
