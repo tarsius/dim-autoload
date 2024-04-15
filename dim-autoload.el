@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2013-2024 Jonas Bernoulli
 
-;; Author: Jonas Bernoulli <jonas@bernoul.li>
+;; Author: Jonas Bernoulli <emacs.dim-autoload@jonas.bernoulli.dev>
 ;; Homepage: https://github.com/tarsius/dim-autoload
 ;; Keywords: convenience
 
