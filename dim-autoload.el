@@ -1,6 +1,6 @@
 ;;; dim-autoload.el --- Dim or hide autoload cookie lines  -*- lexical-binding:t -*-
 
-;; Copyright (C) 2013-2024 Jonas Bernoulli
+;; Copyright (C) 2013-2025 Jonas Bernoulli
 
 ;; Author: Jonas Bernoulli <emacs.dim-autoload@jonas.bernoulli.dev>
 ;; Homepage: https://github.com/tarsius/dim-autoload
