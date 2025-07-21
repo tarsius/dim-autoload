@@ -120,14 +120,7 @@ using `global-dim-autoload-cookies-mode'."
         (t
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-1)
          (font-lock-remove-keywords nil dim-autoload-font-lock-keywords-2)))
-  (dim-autoload-refontify))
-
-(defun dim-autoload-refontify ()
-  (when font-lock-mode
-    (save-restriction
-      (widen)
-      (font-lock-flush)
-      (font-lock-ensure))))
+  (font-lock-flush))
 
 ;;;###autoload
 (define-globalized-minor-mode global-dim-autoload-cookies-mode
@@ -159,7 +152,7 @@ using `global-hide-autoload-cookies-mode'."
          (font-lock-add-keywords nil hide-autoload-font-lock-keywords 'end))
         (t
          (font-lock-remove-keywords nil hide-autoload-font-lock-keywords)))
-  (dim-autoload-refontify))
+  (font-lock-flush))
 
 ;;;###autoload
 (define-globalized-minor-mode global-hide-autoload-cookies-mode
