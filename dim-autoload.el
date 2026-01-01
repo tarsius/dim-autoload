@@ -190,5 +190,6 @@ and `hide-autoload-cookies-mode'."
 (provide 'dim-autoload)
 ;; Local Variables:
 ;; indent-tabs-mode: nil
+;; lisp-indent-local-overrides: ((cond . 0) (interactive . 0))
 ;; End:
 ;;; dim-autoload.el ends here
