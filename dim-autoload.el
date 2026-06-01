@@ -6,7 +6,7 @@
 ;; Homepage: https://github.com/tarsius/dim-autoload
 ;; Keywords: convenience
 
-;; Package-Version: 2.1.2
+;; Package-Version: 2.1.3
 ;; Package-Requires: (
 ;;     (emacs  "28.1")
 ;;     (compat "30.1"))
