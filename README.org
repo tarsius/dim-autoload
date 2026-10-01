@@ -38,5 +38,6 @@ so:
 
 #+html: <br><br>
 #+html: <a href="https://github.com/tarsius/dim-autoload/actions/workflows/compile.yml"><img alt="Compile" src="https://github.com/tarsius/dim-autoload/actions/workflows/compile.yml/badge.svg"/></a>
-#+html: <a href="https://stable.melpa.org/#/dim-autoload"><img alt="MELPA Stable" src="https://stable.melpa.org/packages/dim-autoload-badge.svg"/></a>
-#+html: <a href="https://melpa.org/#/dim-autoload"><img alt="MELPA" src="https://melpa.org/packages/dim-autoload-badge.svg"/></a>
+#+html: <a href="https://snapshots.melpa.org/#/dim-autoload"><img alt="MELPA Snapshots" src="https://snapshots.melpa.org/packages/dim-autoload-badge.svg"/></a>
+#+html: <a href="https://releases.melpa.org/#/dim-autoload"><img alt="MELPA Releases" src="https://releases.melpa.org/packages/dim-autoload-badge.svg"/></a>
+#+html: <a href="https://emacsair.me/human"><img alt="human made" src="https://emacsair.me/assets/badges/human.svg"/></a>
