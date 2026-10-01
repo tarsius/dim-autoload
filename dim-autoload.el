@@ -6,10 +6,10 @@
 ;; Homepage: https://github.com/tarsius/dim-autoload
 ;; Keywords: convenience
 
-;; Package-Version: 2.1.3
+;; Package-Version: 2.1.4
 ;; Package-Requires: (
 ;;     (emacs  "28.1")
-;;     (compat "30.1"))
+;;     (compat "31.1"))
 
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
